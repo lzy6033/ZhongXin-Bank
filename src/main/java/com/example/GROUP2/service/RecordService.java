@@ -13,22 +13,21 @@ import java.util.*;
 public class RecordService {
     @Autowired
     RecordMapper recordMapper;
-
-    public Record findOneRecord(long logID,int recordID){
-        log.info("Log:"+logID+"查找recordID="+recordID+"的违规记录");
+    public Record showMyRecord(int recordID){
         return recordMapper.findOneRecord(recordID);
     }
-    public boolean addOneRecord(long logID,int usrID,int type,int location,
+
+    public Record findOneRecord(int recordID){
+        return recordMapper.findOneRecord(recordID);
+    }
+    public boolean addOneRecord(int usrID,int type,int location,
                                String time,int duration){
-        log.info("Log:"+logID+"增加一条违规记录usrID="+usrID+",type="+type+",location="+location+",time="+time+",duration="+duration);
         return recordMapper.addOneRecord(usrID,type,location,time,duration);
     }
-    public boolean deleteOneRecord(long logID,int recordID){
-        log.info("Log:"+logID+"删除recordID="+recordID+"的违规记录");
+    public boolean deleteOneRecord(int recordID){
         return recordMapper.deleteOneRecord(recordID);
     }
-    public Collection<Record> findEmployeeRecord(long logID,int usrID){
-        log.info("Log:"+logID+"查找usrID="+usrID+"的员工所有违规记录");
+    public Collection<Record> findEmployeeRecord(int usrID){
         return recordMapper.findEmployeeRecord(usrID);
 
     }

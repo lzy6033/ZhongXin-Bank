@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.GROUP2.mapper.RecordMapper">
+
     <select id="findOneRecord" resultType="com.example.GROUP2.bean.Record">
         select * from records where record_id = #{recordID} limit 1;
     </select>

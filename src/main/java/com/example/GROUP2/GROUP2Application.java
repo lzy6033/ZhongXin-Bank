@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ICanDoItApplication {
+public class GROUP2Application {
 	public static void main(String[] args) {
-		SpringApplication.run(ICanDoItApplication.class, args);
+		SpringApplication.run(GROUP2Application.class, args);
 	}
 }

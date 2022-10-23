@@ -12,11 +12,16 @@
     <delete id="deleteEmployeeInfo">
         delete from employees where usr_id = #{usrID};
     </delete>
+    <update id="addRight">
+        update employees set admin=1 where usr_id=#{usrID}
+    </update>
+    <update id="deleteRight">
+        update employees set admin=0 where usr_id=#{usrID}
+    </update>
     <select id="showAllEmployees" resultType="com.example.GROUP2.bean.Employee">
         select * from employees;
     </select>
-<!--    <update id="AddRight">-->
-<!--    </update>-->
+
 
 <!--    <select id="findEmployeeRecord" resultType="com.example.GROUP2.bean.Record">-->
 <!--        select * from records where usr_id = #{usrID};-->

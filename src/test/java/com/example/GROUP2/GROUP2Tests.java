@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 @Slf4j
 @SpringBootTest
-class ICanDoItApplicationTests {
+class GROUP2Tests {
 
 
 	@Autowired
