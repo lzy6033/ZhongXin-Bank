@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.GROUP2.mapper.EmployeeMapper">
+    <select id="findEmployeeInfo" resultType="com.example.GROUP2.bean.Employee">
+        select * from employees where usr_id = #{usrID} limit 1;
+    </select>
+    <insert id="addEmployeeInfo" useGeneratedKeys="true">
+        insert into employees (usr_id,name,gender,age,department,admin)values (#{usrID},#{name},#{gender},#{age},#{department},#{admin});
+    </insert>
+    <delete id="deleteEmployeeInfo">
+        delete from employees where usr_id = #{usrID};
+    </delete>
+    <select id="showAllEmployees" resultType="com.example.GROUP2.bean.Employee">
+        select * from employees;
+    </select>
+<!--    <update id="AddRight">-->
+<!--    </update>-->
+
+<!--    <select id="findEmployeeRecord" resultType="com.example.GROUP2.bean.Record">-->
+<!--        select * from records where usr_id = #{usrID};-->
+<!--    </select>-->
+</mapper>
